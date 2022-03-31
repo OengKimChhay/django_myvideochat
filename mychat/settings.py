@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-h31@c0rs@od()orisuk(vv8%+6@5o6xc&*2^_+kg14^mmbv%14
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['django-video-call.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -73,8 +73,12 @@ WSGI_APPLICATION = 'mychat.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # <-- UPDATED line
+        'NAME': 'd1n4mcnm1noojv',  # <-- UPDATED line
+        'USER': 'gncaidpxeectgk',  # <-- UPDATED line
+        'PASSWORD': '03536d699342540d130115c9d587d129ddab120963c34e327d47f7253458ca6d',  # <-- UPDATED line
+        'HOST': 'ec2-34-197-84-74.compute-1.amazonaws.com',  # <-- UPDATED line
+        'PORT': '5432',
     }
 }
 
