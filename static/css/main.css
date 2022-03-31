@@ -1,0 +1,81 @@
+#form-container{
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 20px;
+    box-shadow: 0px 2px 3px grey;
+    border-radius: 10px;
+    text-align: center;
+}
+#form-container i{
+    font-size: 79px;
+    display: flex;
+    justify-content: center;
+}
+#video-streams{
+    display: flex;
+    flex-wrap: wrap;
+    height: 85vh;
+    width: 55%;
+    margin: 0 auto;
+}
+.video-container{
+    flex-basis:500px;
+    flex-grow:1;
+    max-height: 100%;
+    min-height: 350px;
+    border: 1px solid rgba(75, 95, 172, 1);
+    border-radius: 5px;
+    margin: 2px;
+    background-color: rgba(198, 202, 219, 1);
+    position: relative;
+}
+.username-wrapper{
+    position: absolute;
+    top: 0;
+    padding: 10px 47px;
+    color: white;
+    background: #00000069;
+    text-transform: capitalize;
+}
+.video-player{
+   height: 100%;
+   width: 100%;
+}
+
+#control-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 1rem;
+    position: fixed;
+    bottom:70px;
+}
+.control-icon{
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 2px 3px grey;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.control-icon i{
+    font-size:20px;
+}
+.control-icon i.fa-sign-out-alt{
+    color:red;
+}
+.control-icon i.fa-video{
+    color:blue;
+}
+
+@media screen and (max-width:1560px){
+    .video-container{
+        flex-basis:300px;
+        min-height:200px;
+    }
+}

@@ -1,0 +1,46 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<main>
+    <section id="form-container">
+        <i class="fab fa-rocketchat"></i>
+        <div>
+            <h1>Welcome to MyChat</h1>
+            <p>A group video calling applicatik</p>
+        </div>
+        <form id="form">
+              <div class="mb-3">
+                    <label class="form-label">Room Name</label>
+                    <input type="text" class="form-control" name="room">
+              </div>
+              <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+</main>
+<script type="text/javascript">
+    let form = document.getElementById('form');
+    let handleSubmit = async (e) => {
+        e.preventDefault()
+        let room = e.target.room.value.toUpperCase();
+        let name = e.target.name.value;
+
+        let response = await fetch(`/get-token?channel=${room}`);
+        let data = await response.json();
+
+        let UID = data.uid;
+        let token = data.token
+
+        sessionStorage.setItem('UID', UID)
+        sessionStorage.setItem('token', token)
+        sessionStorage.setItem('room', room)
+        sessionStorage.setItem('name', name)
+        window.open('/room/', '_self')
+    }
+    form.addEventListener('submit', handleSubmit)
+</script>
+{% endblock content %}
